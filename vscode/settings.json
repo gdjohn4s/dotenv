@@ -1,0 +1,64 @@
+{
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "python.pythonPath": "/usr/bin/python3",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.fontSize": 17,
+    "tabnine.experimentalAutoImports": true,
+    "git.autofetch": true,
+    "editor.fontFamily": "'Envy Code R', 'monospace'",
+    "gitlens.advanced.messages": {
+        "suppressCreatePullRequestPrompt": true,
+        "suppressGitMissingWarning": true
+    },
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "[dart]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true,
+        "editor.rulers": [
+            80
+        ],
+        "editor.selectionHighlight": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.suggestSelection": "first",
+        "editor.tabCompletion": "onlySnippets",
+        "editor.wordBasedSuggestions": false
+    },
+    "git.confirmSync": false,
+    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "window.zoomLevel": -1,
+    "editor.minimap.maxColumn": 70,
+    "editor.minimap.enabled": false,
+    "editor.formatOnSave": true,
+    "editor.fontWeight": "normal",
+    "editor.letterSpacing": 0.40,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "keyword.control",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "storage.type",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            }
+        ]
+    }
+}
