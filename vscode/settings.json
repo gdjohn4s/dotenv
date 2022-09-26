@@ -8,13 +8,13 @@
         "jupyter-notebook": "left"
     },
     "python.defaultInterpreterPath": "/usr/bin/python3",
-    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+    "workbench.iconTheme": "vscode-icons",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.fontSize": 17,
+    "editor.fontSize": 14,
     "tabnine.experimentalAutoImports": true,
     "git.autofetch": true,
-    "editor.fontFamily": "'Envy Code R', 'monospace'",
+    "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
     "gitlens.advanced.messages": {
         "suppressCreatePullRequestPrompt": true,
         "suppressGitMissingWarning": true
@@ -38,13 +38,11 @@
         "editor.wordBasedSuggestions": false
     },
     "git.confirmSync": false,
-    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
-    "window.zoomLevel": -1,
     "editor.minimap.maxColumn": 70,
     "editor.minimap.enabled": false,
     "editor.formatOnSave": true,
     "editor.fontWeight": "normal",
-    "editor.letterSpacing": 0.40,
+    "editor.letterSpacing": 0.20,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
             {
@@ -58,7 +56,62 @@
                 "settings": {
                     "fontStyle": "bold"
                 }
+            },
+            {
+                "scope": "keyword.type.go",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "keyword.struct.go",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "keyword.package.go",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "keyword.import.go",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "keyword.const.go",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "keyword.function.go",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "keyword.other.rust",
+                "settings": {
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "keyword.other.fn.rust",
+                "settings": {
+                    "fontStyle": "bold"
+                }
             }
         ]
-    }
+    },
+    "terminal.integrated.fontFamily": "monospace",
+    "snyk.yesWelcomeNotification": false,
+    "git.suggestSmartCommit": false,
+    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "terminal.integrated.gpuAcceleration": "off",
+    "vscode_vibrancy.opacity": 100,
+    "vscode_vibrancy.theme": "Tokyo Night Storm"
 }
