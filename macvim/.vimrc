@@ -16,10 +16,18 @@ set scrolloff=8
 filetype plugin indent on   "allow auto-indenting depending on file type
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
-set clipboard=unnamedplus   " using system clipboard
 filetype plugin on
 set cursorline              " highlight current cursorline
 set ttyfast                 " Speed up scrolling in Vim
+set termguicolors
+let g:airline#extensions#tabline#enabled = 1
+
+" Check if system OS is Darwin or Linux
+if system('uname -s') == "Darwin\n"
+    set clipboard=unnamed "OSX
+else
+    set clipboard=unnamedplus "Linux
+endif
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -47,6 +55,8 @@ Plugin 'voldikss/vim-floaterm'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'mg979/vim-visual-multi', {'branch': 'master'}
 Plugin 'bluz71/vim-nightfly-guicolors'
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'ayu-theme/ayu-vim'
 
 
 " ...
@@ -67,9 +77,22 @@ nnoremap <C-H> <C-W><C-H>
 nmap <C-t> :FloatermNew<CR>
 nmap <C-f> :FloatermKill<CR>
 nmap <C-h> :Files<CR>
+
+" Buffer Explorer Mapping
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>
+
 "colorscheme spacecamp
 "colorscheme delek
-colorscheme iceberg
+"colorscheme iceberg
+"colorscheme ayu
+"colorscheme codedark
+colorscheme gruvbox
+
+" Remove Background
+hi Normal guibg=NONE ctermbg=NONE
+
 
 set tabstop=4       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
