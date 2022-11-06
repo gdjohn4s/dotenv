@@ -15,14 +15,19 @@ export ZSH="/Users/homeerr/.oh-my-zsh"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export GEM_HOME=$HOME/.gem
 export PATH=$GEM_HOME/bin:$PATH
+export CODEPATH=$HOME/Documents/code
+
+# GO Delve path
+export PATH=$PATH:~/go/bin
+export GOBIN=~/go/bin/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="bira"
-#ZSH_THEME="risto"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="risto"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -105,6 +110,8 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# python3 /Users/homeerr/Documents/code/py/bestemmieShell/bestemmia.py
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -113,8 +120,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="mvim -v"
+# alias vim="mvim -v"
+# alias vim="nvim"
+alias vim="/Users/homeerr/.local/bin/lvim"
 alias code="open -a 'Visual Studio Code.app'"
+alias twt="/Users/homeerr/Documents/code/rust/twitch-tui/target/release/twt"
 
 cat << \EOF >> ~/.zprofile
 # Aggiungi strumenti .NET Core SDK
