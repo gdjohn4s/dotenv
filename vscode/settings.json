@@ -8,13 +8,12 @@
         "jupyter-notebook": "left"
     },
     "python.defaultInterpreterPath": "/usr/bin/python3",
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "vscode-great-icons",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.fontSize": 14,
     "tabnine.experimentalAutoImports": true,
     "git.autofetch": true,
-    "editor.fontFamily": "SF Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "JetBrainsMonoNL NFM, monospace",
     "gitlens.advanced.messages": {
         "suppressCreatePullRequestPrompt": true,
         "suppressGitMissingWarning": true
@@ -110,8 +109,15 @@
     "terminal.integrated.fontFamily": "monospace",
     "snyk.yesWelcomeNotification": false,
     "git.suggestSmartCommit": false,
-    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "workbench.colorTheme": "Kanagawa",
     "terminal.integrated.gpuAcceleration": "off",
     "vscode_vibrancy.opacity": 100,
-    "vscode_vibrancy.theme": "Tokyo Night Storm"
+    "vscode_vibrancy.theme": "Tokyo Night Storm",
+    "debug.allowBreakpointsEverywhere": true,
+    "redhat.telemetry.enabled": false,
+    "editor.semanticHighlighting.enabled": true,
+    "gopls": {
+        "ui.semanticTokens": true,
+    },
+    "rust-analyzer.semanticHighlighting.strings.enable": true
 }
