@@ -11,20 +11,67 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = false
-lvim.colorscheme = "tokyonight"
+-- lvim.colorscheme = "vscode"
+-- lvim.colorscheme = "github_dark"
+lvim.colorscheme = "tokyonight-moon"
+
+local set = vim.opt -- set options
+-- set.tabstop = 4
+-- set.softtabstop = 4
+-- set.shiftwidth = 4
+
+-- vscode theme background configuration
+-- vim.o.background = 'dark'
+-- local c = require('vscode.colors').get_colors()
+-- require ('vscode').setup({
+--   transparent = true,
+--   italic_commments = true,
+--   disable_nvimtree_bg = true
+-- })
+
+-- Github colorscheme configuration
+-- require("github-theme").setup({
+--   theme_style = "dark_default",
+--   comment_style = "italic",
+--   function_style = "bold",
+--   keyword_style = "bold",
+--   variable_style = "NONE",
+--   sidebars = {"qf", "vista_kind", "terminal", "packer"},
+
+--   -- Change the "hint" color to the "orange" color, and make the "error" color bright red
+--   colors = {hint = "orange", error = "#ff0000"},
+
+--   -- Overwrite the highlight groups
+--   overrides = function(c)
+--     return {
+--       htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "underline"},
+--       DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
+--       -- this will remove the highlight groups
+--       TSField = {},
+--     }
+--   end
+-- })
+
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
+
+-- linespacing
+vim.o.linespace = 3
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
+-- Remove Background
+vim.cmd('hi EndOfBuffer guibg=NONE ctermbg=NONE')
+
 -- My keymappings
 vim.keymap.set("n", "<C-t>", ":ToggleTerm<CR>", nil)
 vim.keymap.set("n", "gn", ":bn<CR>", nil)
 vim.keymap.set("n", "gp", ":bp<CR>", nil)
 vim.keymap.set("n", "gd", ":bd<CR>", nil)
+vim.keymap.set("n", "<C-x>", ":sp term://zsh<CR>", nil)
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
@@ -170,12 +217,29 @@ lvim.builtin.treesitter.highlight.enable = true
 -- }
 
 -- Additional Plugins
--- lvim.plugins = {
---     {
---       "folke/trouble.nvim",
---       cmd = "TroubleToggle",
---     },
--- }
+lvim.plugins = {
+    {"Mofiqul/vscode.nvim"},
+    {'projekt0n/github-nvim-theme', tag = 'v0.0.7',},
+    {'xiyaowong/nvim-transparent'},
+}
+
+-- Plugin Configurations
+require("transparent").setup({
+  enable = true, -- boolean: enable transparent
+  extra_groups = { -- table/string: additional groups that should be cleared
+    -- In particular, when you set it to 'all', that means all available groups
+
+    -- example of akinsho/nvim-bufferline.lua
+    "BufferLineTabClose",
+    "BufferlineBufferSelected",
+    "BufferLineFill",
+    "BufferLineBackground",
+    "BufferLineSeparator",
+    "BufferLineIndicatorSelected",
+  },
+  exclude = {}, -- table: groups you don't want to clear
+})
+
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)
 -- vim.api.nvim_create_autocmd("BufEnter", {

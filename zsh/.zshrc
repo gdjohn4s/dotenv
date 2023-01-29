@@ -26,7 +26,7 @@ export GOBIN=~/go/bin/
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="bira"
-ZSH_THEME="risto"
+ZSH_THEME="crunch"
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
@@ -125,6 +125,8 @@ source $ZSH/oh-my-zsh.sh
 alias vim="/Users/homeerr/.local/bin/lvim"
 alias code="open -a 'Visual Studio Code.app'"
 alias twt="/Users/homeerr/Documents/code/rust/twitch-tui/target/release/twt"
+alias lst="lsd --tree"
+alias ll="lsd -l"
 
 cat << \EOF >> ~/.zprofile
 # Aggiungi strumenti .NET Core SDK
@@ -153,3 +155,4 @@ conda deactivate
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
