@@ -8,12 +8,13 @@
         "jupyter-notebook": "left"
     },
     "python.defaultInterpreterPath": "/usr/bin/python3",
-    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.fontSize": 15,
     "tabnine.experimentalAutoImports": true,
     "git.autofetch": true,
-    "editor.fontFamily": "JetBrainsMonoNL NFM, monospace",
+    "editor.fontFamily": "CaskaydiaCove Nerd Font Mono, SF Mono, TerminessTTF Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
     "gitlens.advanced.messages": {
         "suppressCreatePullRequestPrompt": true,
         "suppressGitMissingWarning": true
@@ -41,6 +42,7 @@
     "editor.minimap.enabled": false,
     "editor.formatOnSave": true,
     "editor.fontWeight": "normal",
+    "editor.lineHeight": 1.40,
     "editor.letterSpacing": 0.20,
     "editor.tokenColorCustomizations": {
         "textMateRules": [
@@ -106,18 +108,28 @@
             }
         ]
     },
-    "terminal.integrated.fontFamily": "monospace",
+    "terminal.integrated.fontFamily": "UbuntuMono Nerd Font Mono",
+    "terminal.integrated.fontSize": 16,
     "snyk.yesWelcomeNotification": false,
     "git.suggestSmartCommit": false,
-    "workbench.colorTheme": "Kanagawa",
     "terminal.integrated.gpuAcceleration": "off",
     "vscode_vibrancy.opacity": 100,
     "vscode_vibrancy.theme": "Tokyo Night Storm",
+    "background.customImages": [
+        "file:///Users/homeerr/Documents/img/pippo_astronauta_scifi.gif"
+    ],
     "debug.allowBreakpointsEverywhere": true,
-    "redhat.telemetry.enabled": false,
-    "editor.semanticHighlighting.enabled": true,
-    "gopls": {
-        "ui.semanticTokens": true,
+    "redhat.telemetry.enabled": true,
+    // "editor.lineNumbers": "relative",
+    "terminal.explorerKind": "external",
+    "[python]": {
+        "editor.formatOnType": true
     },
-    "rust-analyzer.semanticHighlighting.strings.enable": true
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "workbench.sideBar.location": "right"
 }
