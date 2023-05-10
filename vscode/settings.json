@@ -6,7 +6,6 @@
   "editor.minimap.enabled": false,
   "workbench.iconTheme": "vscode-icons",
   "git.autofetch": true,
-  "codegpt.apiKey": "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",
   "git.ignoreRebaseWarning": true,
   "editor.formatOnSave": true,
   "[vue]": {
