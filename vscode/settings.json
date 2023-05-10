@@ -1,135 +1,190 @@
 {
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-    "python.pythonPath": "/usr/bin/python3",
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
-    "python.defaultInterpreterPath": "/usr/bin/python3",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.fontSize": 15,
-    "tabnine.experimentalAutoImports": true,
-    "git.autofetch": true,
-    "editor.fontFamily": "CaskaydiaCove Nerd Font Mono, SF Mono, TerminessTTF Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
-    "gitlens.advanced.messages": {
-        "suppressCreatePullRequestPrompt": true,
-        "suppressGitMissingWarning": true
-    },
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-    "[dart]": {
-        "editor.formatOnSave": true,
-        "editor.formatOnType": true,
-        "editor.rulers": [
-            80
-        ],
-        "editor.selectionHighlight": false,
-        "editor.suggest.snippetsPreventQuickSuggestions": false,
-        "editor.suggestSelection": "first",
-        "editor.tabCompletion": "onlySnippets",
-        "editor.wordBasedSuggestions": false
-    },
-    "git.confirmSync": false,
-    "editor.minimap.maxColumn": 70,
-    "editor.minimap.enabled": false,
-    "editor.formatOnSave": true,
-    "editor.fontWeight": "normal",
-    "editor.lineHeight": 1.40,
-    "editor.letterSpacing": 0.20,
-    "editor.tokenColorCustomizations": {
-        "textMateRules": [
-            {
-                "scope": "keyword.control",
-                "settings": {
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "storage.type",
-                "settings": {
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "keyword.type.go",
-                "settings": {
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "keyword.struct.go",
-                "settings": {
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "keyword.package.go",
-                "settings": {
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "keyword.import.go",
-                "settings": {
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "keyword.const.go",
-                "settings": {
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "keyword.function.go",
-                "settings": {
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "keyword.other.rust",
-                "settings": {
-                    "fontStyle": "bold"
-                }
-            },
-            {
-                "scope": "keyword.other.fn.rust",
-                "settings": {
-                    "fontStyle": "bold"
-                }
-            }
-        ]
-    },
-    "terminal.integrated.fontFamily": "UbuntuMono Nerd Font Mono",
-    "terminal.integrated.fontSize": 16,
-    "snyk.yesWelcomeNotification": false,
-    "git.suggestSmartCommit": false,
-    "terminal.integrated.gpuAcceleration": "off",
-    "vscode_vibrancy.opacity": 100,
-    "vscode_vibrancy.theme": "Tokyo Night Storm",
-    "background.customImages": [
-        "file:///Users/homeerr/Documents/img/pippo_astronauta_scifi.gif"
-    ],
-    "debug.allowBreakpointsEverywhere": true,
-    "redhat.telemetry.enabled": true,
-    // "editor.lineNumbers": "relative",
-    "terminal.explorerKind": "external",
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "files.watcherExclude": {
-        "**/.bloop": true,
-        "**/.metals": true,
-        "**/.ammonite": true
-    },
-    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
-    "workbench.sideBar.location": "right"
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "editor.fontSize": 14,
+  "editor.minimap.enabled": false,
+  "workbench.iconTheme": "vscode-icons",
+  "git.autofetch": true,
+  "codegpt.apiKey": "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",
+  "git.ignoreRebaseWarning": true,
+  "editor.formatOnSave": true,
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 2,
+  "editor.tabCompletion": "on",
+  "git.openRepositoryInParentFolders": "always",
+  "oneDarkPro.editorTheme": "Ayu",
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.fontFamily": "JetBrainsMono Nerd Font, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontWeight": "100",
+  "editor.fontLigatures": true,
+  "editor.tokenColorCustomizations": {
+    // "comments": "#fa49fa84",
+    // "functions": "#a871ff",
+    // "variables": "#ffa600",
+    // "keywords": "#ff00b3",
+    // "types": "#ffa600",
+    // "numbers": "#26ff88c2",
+    // "strings": "#26ff88c2",
+    "textMateRules": [
+      {
+        "scope": "keyword.control.flow.python",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "meta.function-call.generic.python",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "support.function.builtin.python",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "constant.language.python",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "keyword.control.import.python",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "entity.name.function.decorator.python",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "support.type.python",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "storage.type.function",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "storage.type",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "storage.modifier",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "keyword.control.conditional.js",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "keyword.control.flow.js",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "keyword.control.trycatch.js",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "keyword.control.import.js",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "entity.name.function.js",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "entity.name.tag.html",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "entity.name.tag.template.html",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "entity.name.function.js",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": "entity.name.function.ts",
+        "settings": {
+          "fontStyle": "bold"
+        }
+      }
+    ]
+  },
+  "workbench.colorCustomizations": {
+    "editor.findMatchBorder": "#66ff00",
+    "editor.findMatchHighlightBackground": "#c1bdff00",
+    "editor.wordHighlightBackground": "#3affe560",
+    "editor.wordHighlightBorder": "#8a4bff",
+    "editorCursor.foreground": "#dd00ff",
+    "list.focusForeground": "#000000",
+    "symbolIcon.functionForeground": "#8a4bff",
+    "editorError.foreground": "#ff0000",
+    "breadcrumb.activeSelectionForeground": "#ff0000",
+    "symbolIcon.fileForeground": "#ff0000",
+    "symbolIcon.namespaceForeground": "#ff0000",
+    "editorLineNumber.foreground": "#8c44ff",
+    // BORDERS
+    "editor.selectionHighlightBorder": "#ffb30eb6",
+    "editor.findMatchHighlightBorder": "#ff0000",
+    "editorError.border": "#ff000069",
+    // BACKGROUNDS
+    "editor.background": "#0e0e0e",
+    "editorGutter.background": "#0e0e0e",
+    "editorWidget.background": "#0e0e0e",
+    "activityBar.background": "#0e0e0e",
+    "sideBar.background": "#0e0e0e",
+    "menu.background": "#0e0e0e",
+    "panel.background": "#0e0e0e",
+    "statusBar.background": "#0e0e0e",
+    "editor.selectionBackground": "#5b2073",
+    "editor.lineHighlightBackground": "#a26df849",
+    "editor.selectionHighlightBackground": "#b7ff0f00",
+    "editor.findMatchBackground": "#90ffac00",
+    "list.focusBackground": "#44abff",
+    "editorBracketMatch.background": "#ad2929",
+    // "editorBracketMatch.for": "#222222",
+    "editorOverviewRuler.bracketMatchForeground": "#ff0000",
+    "editorBracketMatch.border": "#ff0000",
+    "terminal.background": "#0e0e0e"
+  },
+  "git.suggestSmartCommit": false,
+  "window.zoomLevel": 1
 }
