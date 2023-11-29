@@ -1,19 +1,18 @@
--- """"""""""""""""""""""""""""""""""""""""""
--- "_)        _)  |            _)
--- "  |  __ \   |  __|  \ \   /  |  __ `__ \
--- "  |  |   |  |  |     \ \ /   |  |   |   |
--- " _| _|  _| _| \__| _) \_/   _| _|  _|  _|
--- """"""""""""""""""""""""""""""""""""""""""
+--   ____                                                       _       _
+--  /  __    _       _______        ___                       _| |_  _ | |
+-- |   \ \__| |_    |____   |_ _   /  /                      |_  __|| || |
+-- |   /  __    \   ___/  _/|_|_| |  |___  __   ___________   / // \| || |
+--    /  _\/ /\  | |___  _____|   |   _  \|  | |___________| /__  /_| || |
+--    | |/ _/_/  |   /  /____     |  | |  |  |                / _/ /|_|| |
+--    \___/  \__/    \_______|   /__/   \___/                /_/  / ___| |  |
+--                                                            \_/\_\\____|  |
+--      __                                                             ____/
 
-
---[[
- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
- `lvim` is the global options object
-]]
 -- vim options
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
+vim.opt.linespace = 4
 
 -- general
 lvim.log.level = "info"
@@ -22,6 +21,7 @@ lvim.format_on_save = {
   pattern = "*.lua",
   timeout = 1000,
 }
+
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -29,7 +29,6 @@ lvim.format_on_save = {
 lvim.leader = "space"
 
 -- add your own keymapping
--- lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["bn"] = ":bn<cr>"
 lvim.keys.normal_mode["bp"] = ":bp<cr>"
 lvim.keys.normal_mode["bl"] = ":BufferKill<cr>"
@@ -41,16 +40,9 @@ lvim.keys.normal_mode["-"] = ":split<CR>"
 -- toggle term keymap
 lvim.keys.normal_mode["<C-s>"] = ":ToggleTerm size=15 direction=horizontal<CR>"
 
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
-
--- -- Use which-key to add extra bindings with the leader-key prefix
--- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-
 -- -- Change theme settings
--- lvim.colorscheme = "kanagawa"
-lvim.colorscheme = "github_dark_dimmed"
+lvim.colorscheme = "kanagawa"
+-- lvim.colorscheme = "github_dark_dimmed"
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -61,74 +53,60 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 
--- lvim.builtin.treesitter.ignore_install = { "haskell" }
-
--- -- always installed on startup, useful for parsers without a strict filetype
--- lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "regex" }
-
--- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
-
--- --- disable automatic installation of servers
--- lvim.lsp.installer.setup.automatic_installation = false
-
--- ---configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
--- ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
--- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pyright", opts)
-
--- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
--- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
--- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
---   return server ~= "emmet_ls"
--- end, lvim.lsp.automatic_configuration.skipped_servers)
-
--- -- you can set a custom on_attach function that will be used for all the language servers
--- -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
--- lvim.lsp.on_attach_callback = function(client, bufnr)
---   local function buf_set_option(...)
---     vim.api.nvim_buf_set_option(bufnr, ...)
---   end
---   --Enable completion triggered by <c-x><c-o>
---   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
--- end
-
--- -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "stylua" },
---   {
---     command = "prettier",
---     extra_args = { "--print-width", "100" },
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
---   {
---     command = "shellcheck",
---     args = { "--severity", "warning" },
---   },
--- }
-
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
   { "EdenEast/nightfox.nvim" },
   { "rebelot/kanagawa.nvim" },
   { "akinsho/toggleterm.nvim",    version = "*", config = true },
   { 'projekt0n/github-nvim-theme' },
+  { "folke/todo-comments.nvim" },
+  {
+    'stevearc/conform.nvim',
+    opts = {},
+  }
 }
 
--- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
+local opts = { noremap = true, silent = true }
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- Disable hover in favor of Pyright
+  client.server_capabilities.hoverProvider = false
+  -- Mappings.
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  vim.keymap.set('n', '<space>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, bufopts)
+  vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+end
+
+-- Configure `ruff-lsp`.
+require('lspconfig').ruff_lsp.setup {
+  on_attach = on_attach,
+  init_options = {
+    settings = {
+      args = {},
+    }
+  }
+}
 -- Formatter Configuration
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
@@ -138,20 +116,36 @@ formatters.setup {
   },
 }
 
--- Set autocommand to format file on save
+-- Conform prettier setup
+local conform = require("conform")
+conform.setup({
+  formatters_by_ft = {
+    lua = { "stylua" },
+    -- Conform will run multiple formatters sequentially
+    python = { "isort", "ruff" },
+    -- Use a sub-list to run only the first available formatter
+    javascript = { { "prettierd", "prettier" } },
+    rust = { "rust-analyzer" }
+  },
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
+})
+
+-- Set autocommand to format file on save using conform
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.ts", "*.tsx", "*.vue", "*.js", "*.py", "*.rs", "*.lua" },
-  callback = function()
-    vim.lsp.buf.format()
+  -- pattern = { "*.ts", "*.tsx", "*.vue", "*.js", "*.py", "*.rs", "*.lua" },
+  pattern = "*",
+  callback = function(args)
+    vim.lsp.buf.format({ bufnr = args.buf })
   end,
 })
 
 local function toggleTermOnStartup()
-  print("Toggle term");
   local t_heigth = 15;
   local t_position = "horizontal";
   local command = ":ToggleTerm size=" + t_heigth + "direction=" + t_position + "<CR>";
   vim.cmd(command);
 end
-
--- open toggle term on nvim start
