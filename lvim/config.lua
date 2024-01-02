@@ -6,7 +6,7 @@
 --    | |/ _/_/  |   /  /____     |  | |  |  |                / _/ /|_|| |
 --    \___/  \__/    \_______|   /__/   \___/                /_/  / ___| |  |
 --                                                            \_/\_\\____|  |
---      __                                                             ____/
+--                                                                     ____/
 
 -- vim options
 vim.opt.shiftwidth = 2
@@ -32,6 +32,20 @@ lvim.leader = "space"
 lvim.keys.normal_mode["bn"] = ":bn<cr>"
 lvim.keys.normal_mode["bp"] = ":bp<cr>"
 lvim.keys.normal_mode["bl"] = ":BufferKill<cr>"
+lvim.keys.normal_mode["tl"] = ":Telescope<cr>"
+
+-- todo-comments keymapping
+lvim.keys.normal_mode["tt"] = ":TodoLocList<cr>"
+-- get the current filename to open TodoLocList only on the file opened
+vim.keymap.set('n', 'tc', function()
+  local cwd_file_name = vim.fn.expand('%')
+  local command = string.format(":TodoLocList cwd=%s", cwd_file_name);
+
+  if not vim.cmd(command) then
+    local error_msg = string.format("Error while opening file %s", cwd_file_name)
+    error(error_msg, 1)
+  end
+end)
 
 -- split screen keybindings
 lvim.keys.normal_mode["|"] = ":vsplit<CR>"
@@ -42,12 +56,12 @@ lvim.keys.normal_mode["<C-s>"] = ":ToggleTerm size=15 direction=horizontal<CR>"
 
 -- -- Change theme settings
 lvim.colorscheme = "kanagawa"
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 -- lvim.colorscheme = "github_dark_dimmed"
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Automatically install missing parsers when entering buffer
@@ -59,11 +73,15 @@ lvim.plugins = {
   { "rebelot/kanagawa.nvim" },
   { "akinsho/toggleterm.nvim",    version = "*", config = true },
   { 'projekt0n/github-nvim-theme' },
-  { "folke/todo-comments.nvim" },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
   {
     'stevearc/conform.nvim',
     opts = {},
-  }
+  },
+  { 'xiyaowong/transparent.nvim' },
 }
 
 local opts = { noremap = true, silent = true }
@@ -72,6 +90,23 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
+-- Todo comments setup
+require 'todo-comments'.setup()
+
+-- Pyright config
+require 'lspconfig'.pyright.setup {
+  on_attach = function(client, bufnr)
+  end,
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = "workspace"
+      }
+    }
+  }
+}
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -95,7 +130,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', '<space>F', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 -- Configure `ruff-lsp`.
@@ -149,3 +184,8 @@ local function toggleTermOnStartup()
   local command = ":ToggleTerm size=" + t_heigth + "direction=" + t_position + "<CR>";
   vim.cmd(command);
 end
+
+-- Overrides configurations
+
+-- nvim tree configuration
+lvim.builtin.nvimtree.setup.view.side = "right"
